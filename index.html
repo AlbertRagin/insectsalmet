@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дезинсекция Альметьевск | Бугульма | Лениногорск</title>
+    <style>
+        /* ===== СБРОС СТИЛЕЙ ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2ecc71;
+            --secondary: #3498db;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+            --danger: #e74c3c;
+            --warning: #f39c12;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        /* ===== БЛОКИ ===== */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            font-size: 18px;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        /* ===== ХЕДЕР ===== */
+        header {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.95), rgba(30, 41, 59, 0.95));
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background: rgba(44, 62, 80, 0.98);
+            padding: 15px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* ===== ГЕРОЙ СЕКЦИЯ ===== */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/hero.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 180px 0 100px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s;
+        }
+
+        .cities-badge {
+            background: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 50px;
+            margin-bottom: 30px;
+            font-size: 18px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* ===== КНОПКИ ===== */
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 18px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+        }
+
+        .btn:hover {
+            background: #27ae60;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.6);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .btn-secondary:hover {
+            background: #2980b9;
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.6);
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6);
+        }
+
+        .hero .btn {
+            margin: 10px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-10px); }
+        }
+
+        /* ===== УСЛУГИ ===== */
+        .services {
+            background: var(--light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary);
+        }
+
+        .service-icon {
+            font-size: 60px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .service-price {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-top: 15px;
+        }
+
+        /* ===== ПРЕИМУЩЕСТВА ===== */
+        .advantages {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+        }
+
+        .advantages .section-title h2 {
+            color: white;
+        }
+
+        .advantages .section-title h2::after {
+            background: var(--primary);
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .advantage-item {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .advantage-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+
+        .advantage-icon {
+            font-size: 50px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .advantage-item h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        /* ===== ЦЕНЫ ===== */
+        .prices {
+            background: white;
+        }
+
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            box-shadow: var(--shadow);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .price-table th {
+            background: var(--dark);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-size: 18px;
+        }
+
+        .price-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .price-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .price-table tr:hover td {
+            background: #f5f5f5;
+        }
+
+        .price-highlight {
+            background: linear-gradient(135deg, var(--primary), #27ae60);
+            color: white;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        /* ===== ОТЗЫВЫ ===== */
+        .reviews {
+            background: var(--light);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            justify-content: center;
+        }
+
+        .review-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .review-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 80px;
+            color: var(--primary);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+
+        .review-text {
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #555;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .review-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* ===== КОНТАКТЫ ===== */
+        .contacts {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-info {
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .contact-info h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .contact-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            padding: 15px 35px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact-btn i {
+            font-size: 24px;
+        }
+
+        .btn-phone {
+            background: white;
+            color: var(--secondary);
+        }
+
+        .btn-phone:hover {
+            background: #f0f0f0;
+            transform: translateY(-3px);
+        }
+
+        .btn-telegram {
+            background: #2ca5e0;
+            color: white;
+        }
+
+        .btn-telegram:hover {
+            background: #1c8abd;
+            transform: translateY(-3px);
+        }
+
+        .cities-list {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .city-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        /* ===== ФУТЕР ===== */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .copyright {
+            margin-top: 15px;
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* ===== МОДАЛЬНОЕ ОКНО ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.show {
+            display: flex;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            animation: slideUp 0.3s;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #888;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--danger);
+        }
+
+        .modal h3 {
+            margin-bottom: 20px;
+            color: var(--dark);
+            font-size: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover {
+            background: #27ae60;
+            transform: translateY(-2px);
+        }
+
+        /* ===== АНИМАЦИИ ПРИ ПРОКРУТКЕ ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== АДАПТИВНОСТЬ ===== */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                background: rgba(44, 62, 80, 0.98);
+                flex-direction: column;
+                padding: 30px 0;
+                transition: var(--transition);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+
+            .contact-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .cities-badge {
+                font-size: 14px;
+                padding: 8px 20px;
+            }
+
+            .btn {
+                padding: 12px 30px;
+                font-size: 16px;
+            }
+
+            .cities-list {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .city-item {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- ===== ХЕДЕР ===== -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">Дезинсекция <span>Альметьевск</span></a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#services" class="active">Услуги</a></li>
+                <li><a href="#prices">Цены</a></li>
+                <li><a href="#advantages">Преимущества</a></li>
+                <li><a href="#reviews">Отзывы</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ===== ГЕРОЙ СЕКЦИЯ ===== -->
+    <section class="hero">
+        <div class="container">
+            <div class="cities-badge">
+                <i class="fas fa-map-marker-alt"></i> Альметьевск • Бугульма • Лениногорск
+            </div>
+            <h1>Профессиональная дезинсекция</h1>
+            <p>Быстро, безопасно и эффективно избавим от насекомых в вашем доме или офисе</p>
+            <a href="#" class="btn" onclick="openModal('order')">Вызвать дезинсектора</a>
+            <a href="#prices" class="btn btn-secondary">Посмотреть цены</a>
+        </div>
+    </section>
+
+    <!-- ===== УСЛУГИ ===== -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Наши услуги</h2>
+                <p>Профессиональное уничтожение насекомых в Альметьевске, Бугульме и Лениногорске</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h3>Уничтожение тараканов</h3>
+                    <p>Полное уничтожение тараканов с гарантией результата. Безопасные препараты для детей и животных.</p>
+                    <div class="service-price">от 1 500 ₽</div>
+                    <a href="#" class="btn" onclick="openModal('cockroaches')">Заказать</a>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-spider"></i>
+                    </div>
+                    <h3>Уничтожение клопов</h3>
+                    <p>Эффективная обработка от постельных клопов. Гарантия до 1 года. Без запаха и следов.</p>
+                    <div class="service-price">от 2 500 ₽</div>
+                    <a href="#" class="btn" onclick="openModal('bedbugs')">Заказать</a>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-ant"></i>
+                    </div>
+                    <h3>Уничтожение муравьев</h3>
+                    <p>Уничтожение муравьев в квартире, доме или на участке. Долгосрочный эффект.</p>
+                    <div class="service-price">от 1 200 ₽</div>
+                    <a href="#" class="btn" onclick="openModal('ants')">Заказать</a>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-wasp"></i>
+                    </div>
+                    <h3>Уничтожение ос и шершней</h3>
+                    <p>Удаление гнезд ос и шершней на участке. Безопасная обработка без риска для людей.</p>
+                    <div class="service-price">от 2 000 ₽</div>
+                    <a href="#" class="btn" onclick="openModal('wasps')">Заказать</a>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-mosquito"></i>
+                    </div>
+                    <h3>Уничтожение комаров</h3>
+                    <p>Обработка участка от комаров и мошек. Создание комфортной зоны отдыха.</p>
+                    <div class="service-price">от 3 000 ₽</div>
+                    <a href="#" class="btn" onclick="openModal('mosquitoes')">Заказать</a>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-virus"></i>
+                    </div>
+                    <h3>Дезинфекция помещений</h3>
+                    <p>Профессиональная дезинфекция квартир, офисов и общественных мест.</p>
+                    <div class="service-price">от 3 500 ₽</div>
+                    <a href="#" class="btn" onclick="openModal('disinfection')">Заказать</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ПРЕИМУЩЕСТВА ===== -->
+    <section class="section advantages" id="advantages">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Наши преимущества</h2>
+                <p>Почему выбирают нас</p>
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage-item fade-in">
+                    <div class="advantage-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Быстрый выезд</h3>
+                    <p>Приедем в день обращения в Альметьевск, Бугульму или Лениногорск</p>
+                </div>
+                <div class="advantage-item fade-in">
+                    <div class="advantage-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Гарантия результата</h3>
+                    <p>Даем гарантию до 1 года на все виды услуг</p>
+                </div>
+                <div class="advantage-item fade-in">
+                    <div class="advantage-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Безопасные препараты</h3>
+                    <p>Используем только сертифицированные средства безопасные для людей и животных</p>
+                </div>
+                <div class="advantage-item fade-in">
+                    <div class="advantage-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Опытные специалисты</h3>
+                    <p>Работаем с 2015 года, более 5000 довольных клиентов</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ЦЕНЫ ===== -->
+    <section class="section prices" id="prices">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Прайс-лист</h2>
+                <p>Актуальные цены на услуги дезинсекции</p>
+            </div>
+            <table class="price-table fade-in">
+                <thead>
+                    <tr>
+                        <th>Услуга</th>
+                        <th>Площадь</th>
+                        <th>Цена</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Уничтожение тараканов</td>
+                        <td>До 50 м²</td>
+                        <td class="price-highlight">1 500 ₽</td>
+                    </tr>
+                    <tr>
+                        <td>Уничтожение тараканов</td>
+                        <td>50-100 м²</td>
+                        <td class="price-highlight">2 500 ₽</td>
+                    </tr>
+                    <tr>
+                        <td>Уничтожение клопов</td>
+                        <td>До 50 м²</td>
+                        <td class="price-highlight">2 500 ₽</td>
+                    </tr>
+                    <tr>
+                        <td>Уничтожение клопов</td>
+                        <td>50-100 м²</td>
+                        <td class="price-highlight">4 000 ₽</td>
+                    </tr>
+                    <tr>
+                        <td>Уничтожение муравьев</td>
+                        <td>Квартира</td>
+                        <td class="price-highlight">1 200 ₽</td>
+                    </tr>
+                    <tr>
+                        <td>Уничтожение ос и шершней</td>
+                        <td>1 гнездо</td>
+                        <td class="price-highlight">2 000 ₽</td>
+                    </tr>
+                    <tr>
+                        <td>Дезинфекция</td>
+                        <td>До 100 м²</td>
+                        <td class="price-highlight">3 500 ₽</td>
+                    </tr>
+                    <tr>
+                        <td>Обработка от комаров</td>
+                        <td>6 соток</td>
+                        <td class="price-highlight">3 000 ₽</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="text-align: center; margin-top: 30px;" class="fade-in">
+                <a href="#" class="btn btn-danger" onclick="openModal('order')">Заказать услугу</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ОТЗЫВЫ ===== -->
+    <section class="section reviews" id="reviews">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Отзывы клиентов</h2>
+                <p>Что говорят о нас наши клиенты</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card fade-in">
+                    <p class="review-text">Очень быстро приехали, буквально через час после звонка. Тараканы исчезли после первой обработки. Рекомендую!</p>
+                    <div class="review-author">
+                        <div class="author-info">
+                            <h4>Анна К.</h4>
+                            <p>Альметьевск</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card fade-in">
+                    <p class="review-text">Долго мучились с клопами, ни одно средство не помогало. Мастер приехал, все объяснил, обработал. Прошла неделя - ни одного укуса! Спасибо огромное!</p>
+                    <div class="review-author">
+                        <div class="author-info">
+                            <h4>Дмитрий С.</h4>
+                            <p>Бугульма</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card fade-in">
+                    <p class="review-text">Заказывали обработку от ос на даче. Приехали в выходной день, быстро убрали гнездо. Теперь можно спокойно отдыхать на участке. Цены адекватные.</p>
+                    <div class="review-author">
+                        <div class="author-info">
+                            <h4>Елена В.</h4>
+                            <p>Лениногорск</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== КОНТАКТЫ ===== -->
+    <section class="section contacts" id="contacts">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Контакты</h2>
+                <p>Свяжитесь с нами для заказа услуги</p>
+            </div>
+            <div class="contact-info fade-in">
+                <h3>Готовы помочь вам в Альметьевске, Бугульме и Лениногорске!</h3>
+                <p>Работаем ежедневно с 8:00 до 22:00</p>
+            </div>
+            <div class="contact-btns fade-in">
+                <a href="tel:+78553123456" class="contact-btn btn-phone">
+                    <i class="fas fa-phone"></i> +7 (8553) 12-34-56
+                </a>
+                <a href="https://t.me/+79171234567" class="contact-btn btn-telegram" target="_blank">
+                    <i class="fab fa-telegram"></i> Написать в Телеграм
+                </a>
+            </div>
+            <div class="cities-list fade-in">
+                <div class="city-item">
+                    <i class="fas fa-map-marker-alt"></i> Альметьевск
+                </div>
+                <div class="city-item">
+                    <i class="fas fa-map-marker-alt"></i> Бугульма
+                </div>
+                <div class="city-item">
+                    <i class="fas fa-map-marker-alt"></i> Лениногорск
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ФУТЕР ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2026 Дезинсекция Татарстан. Все права защищены.</p>
+                <p class="copyright">Профессиональная дезинсекция в Альметьевске, Бугульме и Лениногорске</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== МОДАЛЬНОЕ ОКНО ===== -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <h3 id="modal-title">Заказать услугу</h3>
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="name">Ваше имя *</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон *</label>
+                    <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">Город *</label>
+                    <select id="city" required>
+                        <option value="">Выберите город</option>
+                        <option value="Альметьевск">Альметьевск</option>
+                        <option value="Бугульма">Бугульма</option>
+                        <option value="Лениногорск">Лениногорск</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="service">Услуга *</label>
+                    <select id="service" required>
+                        <option value="">Выберите услугу</option>
+                        <option value="Тараканы">Уничтожение тараканов</option>
+                        <option value="Клопы">Уничтожение клопов</option>
+                        <option value="Муравьи">Уничтожение муравьев</option>
+                        <option value="Осы">Уничтожение ос и шершней</option>
+                        <option value="Комары">Уничтожение комаров</option>
+                        <option value="Дезинфекция">Дезинфекция помещений</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Дополнительная информация</label>
+                    <textarea id="message" placeholder="Расскажите подробнее о проблеме..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // ===== МОБИЛЬНОЕ МЕНЮ =====
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Закрытие меню при клике на ссылку
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // ===== ПРОКРУТКА ХЕДЕРА =====
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // ===== АНИМАЦИЯ ПРИ ПРОКРУТКЕ =====
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // ===== МОДАЛЬНОЕ ОКНО =====
+        const modal = document.getElementById('modal');
+        const modalTitle = document.getElementById('modal-title');
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        function openModal(serviceType) {
+            modal.classList.add('show');
+            
+            let title = 'Заказать услугу';
+            if (serviceType === 'cockroaches') title = 'Уничтожение тараканов';
+            else if (serviceType === 'bedbugs') title = 'Уничтожение клопов';
+            else if (serviceType === 'ants') title = 'Уничтожение муравьев';
+            else if (serviceType === 'wasps') title = 'Уничтожение ос';
+            else if (serviceType === 'mosquitoes') title = 'Уничтожение комаров';
+            else if (serviceType === 'disinfection') title = 'Дезинфекция';
+            
+            modalTitle.textContent = title;
+            
+            // Автозаполнение поля услуги
+            const serviceSelect = document.getElementById('service');
+            if (serviceType === 'cockroaches') serviceSelect.value = 'Тараканы';
+            else if (serviceType === 'bedbugs') serviceSelect.value = 'Клопы';
+            else if (serviceType === 'ants') serviceSelect.value = 'Муравьи';
+            else if (serviceType === 'wasps') serviceSelect.value = 'Осы';
+            else if (serviceType === 'mosquitoes') serviceSelect.value = 'Комары';
+            else if (serviceType === 'disinfection') serviceSelect.value = 'Дезинфекция';
+        }
+
+        function closeModal() {
+            modal.classList.remove('show');
+            document.getElementById('order-form').reset();
+        }
+
+        // Закрытие модалки на Esc
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('show')) {
+                closeModal();
+            }
+        });
+
+        // ===== ВАЛИДАЦИЯ ФОРМЫ =====
+        document.getElementById('order-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const city = document.getElementById('city').value;
+            const service = document.getElementById('service').value;
+            
+            // Простая валидация
+            if (!name || !phone || !city || !service) {
+                alert('Пожалуйста, заполните все обязательные поля');
+                return;
+            }
+            
+            if (phone.length < 16) {
+                alert('Пожалуйста, введите корректный номер телефона');
+                return;
+            }
+            
+            // Здесь можно добавить отправку на сервер
+            alert(`Спасибо за заявку, ${name}!\n\nМы свяжемся с вами в ближайшее время.\nВаша заявка:\nГород: ${city}\nУслуга: ${service}`);
+            
+            closeModal();
+        });
+
+        // ===== МАСКА ТЕЛЕФОНА =====
+        const phoneInput = document.getElementById('phone');
+        
+        phoneInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            if (value.length > 0) {
+                value = '+7 (' + value;
+            }
+            if (value.length > 4) {
+                value = value.slice(0, 4) + ') ' + value.slice(4);
+            }
+            if (value.length > 9) {
+                value = value.slice(0, 9) + '-' + value.slice(9);
+            }
+            if (value.length > 12) {
+                value = value.slice(0, 12) + '-' + value.slice(12);
+            }
+            if (value.length > 15) {
+                value = value.slice(0, 15) + '-' + value.slice(15);
+            }
+            
+            e.target.value = value.slice(0, 18);
+        });
+
+        // ===== ПЛАВНАЯ ПРОКРУТКА =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
